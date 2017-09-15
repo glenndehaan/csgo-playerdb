@@ -22,7 +22,7 @@ let general_data = {
 /**
  * Init player object if it doesn't exists
  */
-if (!fs.existsSync(`${__dirname}\\csgo-playerdb.json`)) {
+if(Object.keys(db.getData("/")).length === 0 && db.getData("/").constructor === Object){
     db.push("/players", []);
 }
 
